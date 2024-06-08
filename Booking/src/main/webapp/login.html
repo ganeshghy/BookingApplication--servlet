@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- <script>
+        function signup() {
+            var servletUrl = "/Booking/SignUpServlet";
+            window.location.href = servletUrl;
+        }
+    </script> -->
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-sm-5">
+                <div class="card">
+                    <div class="card-header">Login</div>
+                    <div class="card-body">
+                        <form action="login" method="post">
+                            <div class="form-group m-2">
+                                <label for="name" class="m-1">UserName</label>
+                                <input type="text" name="username" id="name" class="form-control m-1" placeholder="username" required/>
+                            </div>
+                            <div class="form-group m-2">
+                                <label for="pwd" class="m-1">Password</label>
+                                <input type="password" name="password" id="pwd" class="form-control m-1" placeholder="password" required/>
+                            </div>
+                            <div class="form-group mt-4 text-center">
+                            	<input type="submit" class="btn btn-primary btn-block" value="Login"/>
+                            </div>
+                        </form>
+                        <div class="text-center">
+                        	<h6 class="d-inline">New Admin?</h6>
+                     		<a href="signUp.html" style="text-decoration: none; font-size: 12px;">SignUp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="delete" method="post">
+		<h2>Delete the record</h2>
+		<table>
+			<tr>
+				<td><label>Book No</label></td>
+				<td><input type="number" id="bno" name="bno" readonly required></td>
+			</tr>
+			<tr>
+				<td><label>Book Name</label></td>
+				<td><input type="text" id="bname" name="bname" readonly required></td>
+			</tr>
+			<tr>
+				<td><label>Author</label></td>
+				<td><input type="text" id="author" name="author" readonly required></td>
+			</tr>
+			<tr>
+				<td><label>Language</label></td>
+				<td><input type="text" id="lan" name="lan" readonly required></td>
+			</tr>
+			<tr>
+				<td><label>Price</label></td>
+				<td><input type="number" id="price" name="price" readonly required></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Delete"></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Function to get URL parameters
+            function getUrlParameter(name) {
+                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+                var results = regex.exec(location.search);
+                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+
+            // Get values from URL parameters
+            var bno = getUrlParameter("bno");
+            var bname = getUrlParameter("bname");
+            var author = getUrlParameter("author");
+            var lan = getUrlParameter("lan");
+            var price = getUrlParameter("price");
+
+            // Set values in input fields
+            document.getElementById("bno").value = bno;
+            document.getElementById("bname").value = bname;
+            document.getElementById("author").value = author;
+            document.getElementById("lan").value = lan;
+            document.getElementById("price").value = price;
+        });
+    </script>
+</html>

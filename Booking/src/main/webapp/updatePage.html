@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+	        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	        crossorigin="anonymous">
+	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	        crossorigin="anonymous"></script>
+	<title>Update Record</title>
+</head>
+<body>
+	<form action="update" method="post" class="text-center">
+        <div class="container">
+            <h2 class="m-4">UPDATE THE RECORD</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <table class="table table-striped">
+                        <tr>
+                            <td><label class="fs-6 mt-1">Book No</label></td>
+                            <td><input class="p-1 rounded" id="bno" type="number" name="bno" readonly></td>
+                        </tr>
+                        <tr>
+                            <td><label class="fs-6 mt-1">Book Name</label></td>
+                            <td><input class="p-1 rounded" id="bname" type="text" name="bname" readonly></td>
+                        </tr>
+                        <tr>
+                            <td><label class="fs-6 mt-1">Author</label></td>
+                            <td><input class="p-1 rounded" id="author" type="text" name="author" readonly></td>
+                        </tr>
+                        <tr>
+                            <td><label class="fs-6 mt-1">Language</label></td>
+                            <td><input class="p-1 rounded" id="lan" type="text" name="lan"></td>
+                        </tr>
+                        <tr>
+                            <td><label class="fs-6 mt-1">Price</label></td>
+                            <td><input class="p-1 rounded" id="price" type="number" name="price"></td>
+                        </tr>
+                    </table>
+                    <input class="py-1 px-2 rounded text-white bg-success" type="submit" value="Update">
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Function to get URL parameters
+            function getUrlParameter(name) {
+                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+                var results = regex.exec(location.search);
+                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+
+            // Get values from URL parameters
+            var bno = getUrlParameter("bno");
+            var bname = getUrlParameter("bname");
+            var author = getUrlParameter("author");
+            var lan = getUrlParameter("lan");
+            var price = getUrlParameter("price");
+
+            // Set values in input fields
+            document.getElementById("bno").value = bno;
+            document.getElementById("bname").value = bname;
+            document.getElementById("author").value = author;
+            document.getElementById("lan").value = lan;
+            document.getElementById("price").value = price;
+        });
+    </script>
+</html>
+<!-- <form action="update" method="post">
+		<h2>Update the record</h2>
+		<table>
+			<tr>
+				<td><label>Book No</label></td>
+				<td><input type="number" id="bno" name="bno" readonly required></td>
+			</tr>
+			<tr>
+				<td><label>Book Name</label></td>
+				<td><input type="text" id="bname" name="bname" readonly required></td>
+			</tr>
+			<tr>
+				<td><label>Author</label></td>
+				<td><input type="text" id="author" name="author" required></td>
+			</tr>
+			<tr>
+				<td><label>Language</label></td>
+				<td><input type="text" id="lan" name="lan" required></td>
+			</tr>
+			<tr>
+				<td><label>Price</label></td>
+				<td><input type="number" id="price" name="price" required></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Update"></td>
+			</tr>
+		</table>
+	</form>
+ -->
